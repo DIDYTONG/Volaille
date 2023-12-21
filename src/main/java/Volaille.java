@@ -1,22 +1,16 @@
 abstract class Volaille {
+
+    //Definition des variables
     private String numeroIdentification;
     private int id;
     private double poids;
-    private double prixParKilo;
+    private double prixJour;
+    private double poidsAbattage;
 
-    public Volaille(int id, double poids, double prixParKilo, String numeroIdentification) {
+    public Volaille(int id, double poids, String numeroIdentification) {
         this.id = id;
         this.poids = poids;
-        this.prixParKilo = prixParKilo;
         this.numeroIdentification = numeroIdentification;
-    }
-
-    public double calculerPrix() {
-        return poids * prixParKilo;
-    }
-
-    public double getPoids() {
-        return poids;
     }
 
     public String getNumeroIdentification() {
@@ -35,15 +29,16 @@ abstract class Volaille {
         this.id = id;
     }
 
-    public void setPoids(double poids) {
-        this.poids = poids;
+    public double getPoids() {
+        return poids;
     }
 
-    public double getPrixParKilo() {
-        return prixParKilo;
-    }
-
-    public void setPrixParKilo(double prixParKilo) {
-        this.prixParKilo = prixParKilo;
+    @Override
+    public String toString() {
+        return "Volaille{" +
+                "numeroIdentification='" + numeroIdentification + '\'' +
+                ", id=" + id +
+                ", poids=" + poids +
+                '}';
     }
 }
